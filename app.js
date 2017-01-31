@@ -31,7 +31,7 @@ app.config(function($routeProvider, $locationProvider) {
 		controller: 'NewPostCtrl',
 		templateUrl: 'partials/newPost.html'
 	})
-	.when('/myPosts', {
+	.when('/myposts', {
 		controller: 'MyPostsCtrl',
 		templateUrl: 'partials/myPosts.html'
 		// resolve: checkForAuth
