@@ -1,0 +1,25 @@
+<h4>"My Posts" page, where users posts will show up when they log in</h4>
+
+<div>
+
+
+
+</div>
+
+
+<ul>
+<!--   <li ng-repeat="post in posts">
+ -->  	<div ng-repeat="(key, value) in posts">
+  		<div class="row">
+  			<div class="col-md-4">
+  			{{value.title}}
+  			{{key}}
+<!--   				<div class="">{{key}}</div>
+  				<div class="">{{value}}</div>-->
+  				<img ng-src="{{value.img}}"
+
+  			</div>
+  		</div>
+  	</div>
+<!--   </li>
+ -->

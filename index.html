@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Reddit Remake</title>
   <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
 </head>
 <body ng-app="redditApp">
+
+<h2>Reddit Remake</h2>
 
 
 <div ng-view>
@@ -20,11 +22,25 @@
 
 
 <!-- ________SCRIPTS________________________ -->
+<!-- ANGULAR -->
 <script src="/lib/angular/angular.min.js"></script>
 <script src="/lib/angular-route/angular-route.min.js"></script>
+<!-- JQUERY -->
 <script src="/lib/jquery/dist/jquery.min.js"></script>
+<!-- BOOTSTRAP -->
 <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- JS -->
 <script src="app.js"></script>
+<!-- CONTROLLERS -->
+<script src="/controllers/LoginCtrl.js"></script>
+<script src="/controllers/MainCtrl.js"></script>
+<script src="/controllers/MyPosts.js"></script>
+<script src="/controllers/RegisterCtrl.js"></script>
+<script src="/controllers/NewPostCtrl.js"></script>
+<!-- FACTORIES -->
+<script src="/factories/postFactory.js"></script>
+
+
 
 </body>
 </html>
