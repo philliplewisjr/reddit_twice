@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Reddit Remake</title>
-  <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+ 	 <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+ 	 <link rel="stylesheet" type="text/css" href="main.css">
+	<!-- up/down vote -->
+	<link data-require="fontawesome@*" data-semver="4.1.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+
 </head>
 <body ng-app="redditApp">
 
@@ -11,10 +16,6 @@
 
 
 <div ng-view>
-
-
-
-
 
 
 
@@ -39,6 +40,11 @@
 <script src="/controllers/NewPostCtrl.js"></script>
 <!-- FACTORIES -->
 <script src="/factories/postFactory.js"></script>
+
+
+
+
+
 
 
 
