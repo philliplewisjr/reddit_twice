@@ -8,7 +8,18 @@ app.controller('MyPostsCtrl', function($scope, $http, postFactory){
 		$scope.posts = val.data
 	})
 // up/down vote
-	$scope.changeVote = function(vote, flag){
-    $scope.vote = vote==flag?'None':flag;
-	}
+// 	$scope.changeVote = function(vote, flag){
+//     $scope.vote = vote==flag?'None':flag;
+// 	}
+  
+  $scope.thumbsUp = (key, value)=> {
+    console.log("thumbs up")
+    console.log(key)
+    console.log(value)
+  }
+
+  $scope.thumbsDown = (key)=> {
+    console.log("thumbs down")
+  }
+
 })

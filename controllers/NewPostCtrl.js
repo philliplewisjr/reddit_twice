@@ -5,16 +5,14 @@ app.controller('NewPostCtrl', function($scope, $http){
 
 	$scope.makeNewPost =function() {
 		console.log("button clicked")
+
 		let newPosts = {
 			title: $scope.titleTextBox,
 			url: $scope.urlTextBox,
-			img: $scope.imageUrlTextBox
+			img: $scope.imageUrlTextBox,
+			counter: 1
 		}
-		$http.post(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/newPosts.json`, JSON.stringify(newPosts))
+		$http.post(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/newPost.json`, JSON.stringify(newPosts))
 		console.log(newPosts)
 	}
 })
-
-
-
-
