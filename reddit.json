@@ -1,0 +1,36 @@
+{
+    "users": {
+        "killigrew": {
+            "first_name": "Johan",
+            "last_name": "Killigrew",
+        },
+
+        "Aten": {
+            "first_name": "Akoben",
+            "last_name": "Aten",
+        },
+
+        "Lewis": {
+            "first_name": "Aemero",
+            "last_name": "Lewis",
+
+        }
+    },
+    "newPost": {
+        "gardening": {
+            "title": "trees",
+            "url": "http://www.2020site.org/trees/acacia.html",
+            "img": "http://dreamlandia.com/images/A/large/acacia-tree-large.jpg",
+        },
+        "food": {
+            "title": "cookies",
+            "url": "http://allrecipes.com/recipes/362/desserts/cookies/http://dayhikesneardenver.com/hikes-lakes-near-denver/",
+            "img": "http://images-gmi-pmc.edge-generalmills.com/9ef16162-a02d-44bc-8113-23d655b08e2d.jpg",
+        },
+        "hiking": {
+            "title": "Lakes",
+            "url": "http://dayhikesneardenver.com/hikes-lakes-near-denver/",
+            "img": "http://www.mountainphotography.com/images/large/201108_sawtoothBaronHiking.jpg"
+        }
+    }
+}
