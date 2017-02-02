@@ -30,9 +30,11 @@
 
 	<div class="buttons">
 
-		<button class="log-in focus">LOG IN</button>
+		<button class="log-in focus">
+		<a href="/#/login">LOG IN</a></button>
 
-		<button class="register focus">REGISTER</button>
+		<button class="register focus">
+		<a href="/#/register">REGISTER</a></button>
 	</div>
 
 
@@ -51,13 +53,24 @@
   					<a href="{{value.url}}"><h3>{{value.title}}</h3></a>
   				</div>
 
+
+
   				<!-- up/down votes -->
 				<div class="voting-arrows">
-  				  <i title="Up Votes" ng-click="changeVote(vote, 'up')" class="fa fa-arrow-circle-up fa-3x" ng-class="{true:'up', false:''}[vote=='up']"></i>
-				  <br>
-				  <i title="Down Votes" ng-click="changeVote(vote, 'down')" class="fa fa-arrow-circle-down fa-3x"  ng-class="{true:'down', false:''}[vote=='down']"></i>
-				  <br>Vote: {{vote}}
-				 </div> <!-- end vote -->
+
+	  				 <i title="Up Votes" ng-click="thumbsUp(key, value)" class="fa fa-arrow-circle-up fa-2x"></i>
+
+					<br>
+					<i title="Down Votes" ng-model="counter" ng-click="thumbsDown(key, value)" class="fa fa-arrow-circle-down fa-2x"></i>
+					<!--   {{vote}} -->
+					<div class="vote-counter">
+					{{value.counter}}
+					</div>
+
+				</div> <!-- end vote -->
+
+
+
 
   				<img ng-src="{{value.img}}">
 
