@@ -1,23 +1,69 @@
-<h4>"Main" page. First page.</h4>
-
-<button>LOG IN BUTTON</button>
-<br>
-<br>
-<button>REGISTER BUTTON</button>
-
-<br>
-<br>
-<br>
-<br>
 
 
-<p>diplay all posts from firebase</p>
+<!-- greeting-->
+<div class="greeting">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<div class='content'>
+	  <div class='visible'>
+	    <p>
+	      Hello
+	    </p>
+	    <ul>
+	      <li>world !</li>
+	      <li>handsome !</li>
+	      <li>beautiful !</li>
+	      <li>you !</li>
+	    </ul>
+	  </div>
+	</div>
+</div> <!-- end div class greeting -->
+<!-- greeting -->
 
 
-<ul>
-	<li>article one</li>
-	<li>article two</li>
-	<li>article three</li>
-	<li>article four</li>
-</ul>
 
+
+	<div class="pick-one">
+		<p>	pick one
+		<i class="em em-point_down"></i>
+		</p>
+	</div>
+
+	<div class="buttons">
+
+		<button class="log-in focus">LOG IN</button>
+
+		<button class="register focus">REGISTER</button>
+	</div>
+
+
+
+
+<div class="wrapper">
+
+
+ 	<div ng-repeat="(key, value) in posts">
+  		<div class="row row-style">
+  			<div class="col column">
+
+
+
+				<div class="post-title">
+  					<a href="{{value.url}}"><h3>{{value.title}}</h3></a>
+  				</div>
+
+  				<!-- up/down votes -->
+				<div class="voting-arrows">
+  				  <i title="Up Votes" ng-click="changeVote(vote, 'up')" class="fa fa-arrow-circle-up fa-3x" ng-class="{true:'up', false:''}[vote=='up']"></i>
+				  <br>
+				  <i title="Down Votes" ng-click="changeVote(vote, 'down')" class="fa fa-arrow-circle-down fa-3x"  ng-class="{true:'down', false:''}[vote=='down']"></i>
+				  <br>Vote: {{vote}}
+				 </div> <!-- end vote -->
+
+  				<img ng-src="{{value.img}}">
+
+
+  			</div> <!-- end column div -->
+  		</div> <!-- end row div -->
+  	</div> <!-- end ng repeat -->
+
+</div> <!-- end wrapper -->
