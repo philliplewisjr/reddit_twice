@@ -8,7 +8,13 @@ app.controller('MyPostsCtrl', function($scope, $http, postFactory){
 		$scope.posts = val.data
 	})
 // up/down vote
-	$scope.changeVote = function(vote, flag){
-    $scope.vote = vote==flag?'None':flag;
+	$scope.changeVote = function(vote, flag, event){
+    // $scope.vote = vote==flag?'None':flag;
+		console.log(event.target.className)
+		event.target.className += flag
 	}
 })
+
+
+
+//look up how to add class
