@@ -1,6 +1,7 @@
 console.log("MyPosts")
 
-app.controller('MyPostsCtrl', function($scope, $http, postFactory){
+app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, userFactory){
+	var tester = []
 	console.log("MyPostsCtrl is loaded")
 	postFactory.getPost()
 	.then((val) => {
@@ -8,9 +9,83 @@ app.controller('MyPostsCtrl', function($scope, $http, postFactory){
 		$scope.posts = val.data
 	})
 
+	userFactory.getUser()
+	.then((val) => {
+		console.log("user val.data", val.data)
+		userData = val.data
+		console.log("hello ",userData[0])
+		tester= [userData]
+		console.log("TESTING ",tester)
+		$scope.users = val.data
+
+
+
+
+
+
+		angular.forEach(userData, function(value, key) {
+			// result[key] = key;
+			console.log("this is a key ", key)
+			console.log("this is a value ", value)
+
+
+			// console.log("this is a key" + key)
+			// console.log("this is a value" + value)
+			// console.log("this is result[key]" + result[key])
+			// boardPins = result[key].pins
+			// boardTitle = result[key].title
+			// if( boardTitle == name) {
+			//
+			//
+			//   var picture
+			//
+			//   angular.forEach(boardPins, function(pinNumber, pinId) {
+			//     picture = pinNumber.pin_id
+			//
+			//     this.push(picture);
+			//   }, arraything);
+			// }
+		})
+
+
+
+
+	})
+
+	        // var result = {};
+	        // var boardTitle
+	        // var boardPins
+
+
+
+	// function fireButton(){
+		// var found = $filter('filter')(value, "title")[0]
+		// if( "Akoben" == found.first_name){
+			// console.log("user stuff here ",found)
+			// button is pressed
+			// patch key to userdataFromFirebase
+		// }
+	// }
+	// fireButton()
+
+
+
+
+
+
+
+
   //function that adds thumbs up votes
   $scope.thumbsUp = (key, value)=> {
     value.counter += 1
+
+
+
+
+
+
+
+
     //incremented object sent to firebase
     let counterObj = {
     counter: value.counter
@@ -37,11 +112,11 @@ app.controller('MyPostsCtrl', function($scope, $http, postFactory){
 
 
 //so, something like this?
-// $scope.fireButton = function(idfrompost){
-// 	var found = $filter('findTheThing')(userdataFromFirebase, idfrompost)[0]
-// 	if( idfrompost !== found){
+// $scope.fireButton = function(key){
+// 	var found = $filter('findTheThing')(userdataFromFirebase, key)[0]
+// 	if( key !== found){
 // 		button is pressed
-//		patch idfrompost to userdataFromFirebase
+//		patch key to userdataFromFirebase
 // 	}
 // }
 
