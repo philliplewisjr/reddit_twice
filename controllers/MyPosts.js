@@ -1,6 +1,7 @@
 console.log("MyPosts")
 
-app.controller('MyPostsCtrl', function($scope, $http, postFactory){
+app.controller('MyPostsCtrl', function($scope, $http, postFactory, authFactory){
+
 	console.log("MyPostsCtrl is loaded")
 	postFactory.getPost()
 	.then((val) => {
@@ -29,4 +30,12 @@ app.controller('MyPostsCtrl', function($scope, $http, postFactory){
     //sends updated count to firebase
     $http.patch(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/newPost/${key}/.json`, JSON.stringify(counterObj))
   }
+  // $http.get(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/users.json`)
+  // .then((data)=>{
+  //   $scope.usersObj = data.data
+  //   $scope.key = key
+  //   $scope.currentUser = data.data.$scope.key.email
+  //   console.log($scope.currentUser)
+  // })
+
 })

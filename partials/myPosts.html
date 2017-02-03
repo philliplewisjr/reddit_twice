@@ -2,16 +2,19 @@
 <div class="greeting">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <div class='content'>
+
     <div class='visible'>
       <p>
         Hey
       </p>
+      <div ng-repeat="(key, value) in usersObj"></div>
       <ul>
-        <li>user !</li>
+        <li>{{currentUser}}!</li>
         <li>user !</li>
         <li>user !</li>
         <li>user !</li>
       </ul>
+
     </div>
   </div>
 </div> <!-- end div class greeting -->
@@ -94,6 +97,7 @@
   <h4>To Do:</h4>
   <li>log out funcitonality</li>
   <li>add logged in user name to welcome header</li>
+  <li>load users post stored to their UID</li>
 </div>
 
 
