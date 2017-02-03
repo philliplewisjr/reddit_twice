@@ -18,6 +18,9 @@ app.factory("authFactory", function (){
     },
     getUID: ()=> {
       return user = firebase.auth().currentUser
+    },
+    logOut: ()=> {
+      return firebase.auth().signOut()
     }
   }
 
