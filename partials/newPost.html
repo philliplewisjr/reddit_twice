@@ -1,23 +1,62 @@
-<h4>This is the New Post page where users will submit a new post.</h4>
 
-<form ng-submit="makeNewPost()">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Title</label>
-    <input ng-model="titleTextBox" type="text" class="form-control" id="exampleInputEmail1" placeholder="">
-  </div>
+<div class="wrapper form-size">
+
+  <!-- mini nav bar -->
+  <header class="nav-header-form">
+    <p><a href="/#/">
+      ALL
+    </a></p>
+    <a href="/#/myposts">
+      <p>MY POSTS</p>
+    </a>
+    <a href="/#/post">
+      <p>NEW POST</p>
+    </a>
+    <a href="/#/login">
+      <p>LOGIN</p>
+    </a>
+    <a href="/#/register">
+      <p>REGISTER</p>
+    </a>
+  </header>
 
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">URL</label>
-    <input ng-model="urlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-  </div>
+
+  <form ng-submit="makeNewPost()" class="black-text border-top">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input ng-model="titleTextBox" type="text" class="form-control" id="exampleInputEmail1" placeholder="">
+    </div>
 
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Image URL</label>
-    <input ng-model="imageUrlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
-  </div>
-  <div class="form-group">
+    <div class="form-group">
+      <label for="exampleInputPassword1">URL</label>
+      <input ng-model="urlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    </div>
 
-  <button  type="submit" class="btn btn-default">Submit</button>
-</form>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image URL</label>
+      <input ng-model="imageUrlTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Decscription</label>
+      <input ng-model="descriptionTextBox" type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+    </div>
+
+
+    <div class="form-group">
+      <button  type="submit" class="btn btn-default">Submit</button>
+    </div>
+
+  </form>
+</div>
+
+<div class="wrapper form-size black-text">
+  <h4>To Do:</h4>
+  <li>Add nav bar</li>
+  <li>Upon clicking submit:</li>
+  <li>Check that fields are populated, url appropiate</li>
+  <li>Redirect to "myPosts"</li>
+</div>

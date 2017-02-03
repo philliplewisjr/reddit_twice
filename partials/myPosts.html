@@ -1,25 +1,110 @@
-<h4>"My Posts" page, where users posts will show up when they log in</h4>
+<!-- greeting-->
+<div class="greeting">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <div class='content'>
+    <div class='visible'>
+      <p>
+        Hey
+      </p>
+      <ul>
+        <li>user !</li>
+        <li>user !</li>
+        <li>user !</li>
+        <li>user !</li>
+      </ul>
+    </div>
+  </div>
+</div> <!-- end div class greeting -->
 
 
-<!--   <li ng-repeat="post in posts">
- -->  	<div ng-repeat="(key, value) in posts">
-  		<div class="row">
-  			<div class="col">
+<!-- here's your posts with emoji -->
+  <div class="heres-your-posts">
+    <p> here's your posts
+    <i class="em em-point_down"></i>
+    </p>
+  </div>
 
-  				<a href="{{value.url}}">{{value.title}}</a>
 
-  				<img ng-src="{{value.img}}">
+<div class="wrapper">
+
+<!-- mini nav bar -->
+  <header class="nav-header">
+    <p><a href="/#/">
+      ALL
+    </a>
+    </p>
+    <a href="/#/myposts">
+      <p>MY POSTS</p>
+    </a>
+    <a href="/#/post">
+      <p>NEW POST</p>
+    </a>
+    <a href="/#/login">
+      <p>LOGIN</p>
+    </a>
+    <a href="/#/register">
+      <p>REGISTER</p>
+    </a>
+  </header>
+
+
+
+
+  <div ng-repeat="(key, value) in posts">
+    <div class="row row-style">
+  			<div class="col column">
+
+          <div class="post-title">
+  				  <a href="{{value.url}}"><h3>{{value.title}}</h3></a>
+          </div>
 
 <!-- up/down votes -->
-  				  <i title="Up Votes" ng-click="thumbsUp(key, value)" class="fa fa-arrow-circle-up fa-2x"></i>
-            {{value.counter}} {{key}}
-				  <br>
-				  <i title="Down Votes" ng-model="counter" ng-click="thumbsDown(key, value)" class="fa fa-arrow-circle-down fa-2x"></i>
-				  <br>Vote: {{vote}}
+          <div class="voting-arrows">
+
+               <i title="Up Votes" ng-click="thumbsUp(key, value)" class="fa fa-arrow-circle-up fa-2x"></i>
+
+            <br>
+            <i title="Down Votes" ng-model="counter" ng-click="thumbsDown(key, value)" class="fa fa-arrow-circle-down fa-2x"></i>
+
+            <div class="vote-counter">
+            {{value.counter}}
+            </div>
+
+          </div> <!-- end vote -->
+
+<!-- user post image -->
+  				<img ng-src="{{value.img}}">
+
+<!-- user post description -->
+          <div class="post-description">
+            <p class="post-description-2">{{value.description}}</p>
+          </div>
 
 
   			</div>
   		</div>
   	</div>
-<!--   </li>
- -->
+
+</div>
+
+<div class="wrapper black-text form-size">
+  <h4>To Do:</h4>
+  <li>fix styling</li>
+  <li>Add Nav</li>
+  <li>-new post</li>
+  <li>-all posts</li>
+  <li>-log out</li>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
