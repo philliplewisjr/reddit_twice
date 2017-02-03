@@ -1,5 +1,54 @@
+<!-- greeting-->
+<div class="greeting">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <div class='content'>
+    <div class='visible'>
+      <p>
+        Hey
+      </p>
+      <ul>
+        <li>user !</li>
+        <li>user !</li>
+        <li>user !</li>
+        <li>user !</li>
+      </ul>
+    </div>
+  </div>
+</div> <!-- end div class greeting -->
+
+
+<!-- here's your posts with emoji -->
+  <div class="heres-your-posts">
+    <p> here's your posts
+    <i class="em em-point_down"></i>
+    </p>
+  </div>
+
 
 <div class="wrapper">
+
+<!-- mini nav bar -->
+  <header class="nav-header">
+    <p><a href="/#/">
+      ALL
+    </a>
+    </p>
+    <a href="/#/myposts">
+      <p>MY POSTS</p>
+    </a>
+    <a href="/#/post">
+      <p>NEW POST</p>
+    </a>
+    <a href="/#/login">
+      <p>LOGIN</p>
+    </a>
+    <a href="/#/register">
+      <p>REGISTER</p>
+    </a>
+  </header>
+
+
+
 
   <div ng-repeat="(key, value) in posts">
     <div class="row row-style">
@@ -28,7 +77,7 @@
 
 <!-- user post description -->
           <div class="post-description">
-            <a href="{{value.description}}"><p class="post-description">{{value.description}}</p></a>
+            <p class="post-description-2">{{value.description}}</p>
           </div>
 
 
@@ -36,6 +85,15 @@
   		</div>
   	</div>
 
+</div>
+
+<div class="wrapper black-text form-size">
+  <h4>To Do:</h4>
+  <li>fix styling</li>
+  <li>Add Nav</li>
+  <li>-new post</li>
+  <li>-all posts</li>
+  <li>-log out</li>
 </div>
 
 

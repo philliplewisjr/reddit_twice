@@ -42,8 +42,37 @@
 	</div>
 
 
+
+
+
+
 <!-- box with content -->
 <div class="wrapper">
+
+
+
+<!-- mini nav bar -->
+	<header class="nav-header">
+		<p><a href="/#/">
+			ALL
+		</a></p>
+		<a href="/#/myposts">
+			<p>MY POSTS</p>
+		</a>
+		<a href="/#/post">
+			<p>NEW POST</p>
+		</a>
+		<a href="/#/login">
+			<p>LOGIN</p>
+		</a>
+		<a href="/#/register">
+			<p>REGISTER</p>
+		</a>
+	</header>
+
+
+
+
 
  	<div ng-repeat="(key, value) in posts">
   		<div class="row row-style">
@@ -73,9 +102,8 @@
 
 <!-- user post description -->
   				<div class="post-description">
-  					<a href="{{value.description}}""><p class="post-description-2">		{{value.description}}
+  					<p class="post-description-2">		{{value.description}}
 	  					</p>
-  					</a>
   				</div>
 
 
@@ -84,3 +112,14 @@
   	</div> <!-- end ng repeat -->
 
 </div> <!-- end wrapper -->
+
+
+<div class="wrapper form-size black-text">
+  <h4>To Do:</h4>
+  <li>Add nav bar</li>
+  <li>Limit the times a user can click either up or down per post</li>
+  <li>Add '...' to the end of the unhidden portion of the description</li>
+  <li>Sort posts by number of likes</li>
+  <li>A 'loading' page</li>
+</div>
+
