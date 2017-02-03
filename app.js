@@ -46,6 +46,10 @@ var config = {
 		templateUrl: 'partials/myPosts.html'
 		// resolve: checkForAuth
 	})
+  .when('/logout', {
+    controller: 'LogoutCtrl',
+    templeteUrl: 'partials/logout.html'
+  })
 	.otherwise({
 		redirectTo: '/'
 	})
@@ -53,12 +57,3 @@ var config = {
 
 
 })
-
-
-
-
-
-
-
-
-
