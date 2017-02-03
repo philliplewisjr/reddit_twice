@@ -2,6 +2,7 @@
 
 app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, userFactory, checkForAuth){
 	var tester = []
+	var postlog = []
 	console.log("MyPostsCtrl is loaded")
 // firebase.auth().onAuthStateChanged
 
@@ -15,7 +16,7 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
 		// console.log("user val.data", val.data)
 		userData = val.data
 		// console.log("hello ",userData[0])
-		tester= []
+		// tester= []
 		// console.log("TESTING ",tester)
 		$scope.users = val.data
 
@@ -25,14 +26,28 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
 
   //function that adds thumbs up votes
   $scope.thumbsUp = (key, value)=> {
+
 		let currentPerson = firebase.auth().currentUser.email
-		console.log(currentPerson)
+		// console.log(currentPerson)
 		angular.forEach(userData, function(value, key) {
 			// result[key] = key;
-			console.log("this is a key ", key)
-			console.log("this is a value ", value)
+
+			// console.log("this is a key ", key)
+			// console.log("this is a value ", value)
+			// buttonHits = value.myPosts;
+
+
 			tester.push(value.email);
 			console.log(tester)
+
+			for (var i =0; i < tester.length; i++){
+				if(tester[i] === currentPerson) {
+					console.log("tester ",tester[i] + " currentPerson ", currentPerson)
+					console.log("wonder if ", value.name)
+				} else {
+					console.log("nope")
+				}
+			}
 		})
 
 
