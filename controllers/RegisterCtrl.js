@@ -9,8 +9,13 @@ app.controller('RegisterCtrl', function($scope,authFactory, $http){
     let registerData = {
       name: $scope.userName,
       passWord: $scope.userPass,
-      email: $scope.userEmail
+      email: $scope.userEmail,
+			myPosts: ""
     }
+		authFactory.postUser(registerData, authFactory.getUID())
+	// .then(function() {
+	// 	$location.url('/myposts')
+	// })
 
     console.log(registerData)
     authFactory.getAuth(registerData)
