@@ -11,6 +11,7 @@ app.controller('NewPostCtrl', function($scope, $http){
 			title: $scope.titleTextBox,
 			url: $scope.urlTextBox,
 			img: $scope.imageUrlTextBox,
+			description: $scope.descriptionTextBox,
 			counter: 1
 		}
 

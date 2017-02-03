@@ -1,5 +1,4 @@
 
-
 <!-- greeting-->
 <div class="greeting">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -17,62 +16,95 @@
 	  </div>
 	</div>
 </div> <!-- end div class greeting -->
-<!-- greeting -->
 
 
-
-
+<!-- pick one with emoji -->
 	<div class="pick-one">
 		<p>	pick one
 		<i class="em em-point_down"></i>
 		</p>
 	</div>
 
-	<div class="buttons">
 
-		<button class="log-in focus">
-		<a href="/#/login">LOG IN</a></button>
+<!-- login/register buttons -->
+	<div class="buttons-div">
 
-		<button class="register focus">
-		<a href="/#/register">REGISTER</a></button>
+
+		<a href="/#/login">
+			<button class="log-in focus">
+				LOG IN</button>
+		</a>
+
+		<a href="/#/register">
+			<button class="register focus">
+			REGISTER</button>
+		</a>
 	</div>
 
 
 
 
+
+
+<!-- box with content -->
 <div class="wrapper">
+
+
+
+<!-- mini nav bar -->
+	<header class="nav-header">
+		<p><a href="/#/">
+			ALL
+		</a></p>
+		<a href="/#/myposts">
+			<p>MY POSTS</p>
+		</a>
+		<a href="/#/post">
+			<p>NEW POST</p>
+		</a>
+		<a href="/#/login">
+			<p>LOGIN</p>
+		</a>
+		<a href="/#/register">
+			<p>REGISTER</p>
+		</a>
+	</header>
+
+
+
 
 
  	<div ng-repeat="(key, value) in posts">
   		<div class="row row-style">
   			<div class="col column">
 
-
-
 				<div class="post-title">
   					<a href="{{value.url}}"><h3>{{value.title}}</h3></a>
   				</div>
 
 
-
-  				<!-- up/down votes -->
+<!-- up/down votes -->
 				<div class="voting-arrows">
 
 	  				 <i title="Up Votes" ng-click="thumbsUp(key, value)" class="fa fa-arrow-circle-up fa-2x"></i>
 
 					<br>
 					<i title="Down Votes" ng-model="counter" ng-click="thumbsDown(key, value)" class="fa fa-arrow-circle-down fa-2x"></i>
-					<!--   {{vote}} -->
+
 					<div class="vote-counter">
 					{{value.counter}}
 					</div>
 
 				</div> <!-- end vote -->
 
-
-
-
+<!-- user post image -->
   				<img ng-src="{{value.img}}">
+
+<!-- user post description -->
+  				<div class="post-description">
+  					<p class="post-description-2">		{{value.description}}
+	  					</p>
+  				</div>
 
 
   			</div> <!-- end column div -->
@@ -80,3 +112,14 @@
   	</div> <!-- end ng repeat -->
 
 </div> <!-- end wrapper -->
+
+
+<div class="wrapper form-size black-text">
+  <h4>To Do:</h4>
+  <li>Limit the times a user can click either up or down per post</li>
+  <li>Add '...' to the end of the unhidden portion of the description</li>
+  <li>Sort posts by number of likes</li>
+  <li>A 'loading' page</li>
+  <li>Search bar, + functionality</li>
+</div>
+
