@@ -2,36 +2,18 @@ console.log("authorization factory")
 app.factory("authFactory", function ($http){
 
   return {
-    // checkAuth : ($q) => {
-    //   const checkForAuth = {
-    //     checkForAuth ($location, $rootScope) {
-    //       // http://stackoverflow.com/questions/37370224/firebase-stop-listening-onauthstatechanged
-    //       const authReady = firebase.auth().onAuthStateChanged(user => {
-    //         authReady()
-    //         if (user) {
-    //           resolve(user)
-    //           // console.log('User signed out.  $rootScope.uid is ' + $rootScope.uid)
-    //           // $location.url('/login')
-    //         }
-    //         else {
-    //           reject()
-    //           // $rootScope.uid = firebase.auth().currentUser.uid
-    //           // console.log('User signed in.  $rootScope.uid is ' + $rootScope.uid)
-    //         }
-    //       })
-    //     }
-    //   }
-    // }
-  getAuth : (registerData) => {
-      console.log(registerData)
-      return firebase.auth().createUserWithEmailAndPassword(registerData.email, registerData.passWord )
+
+  getAuth : (email, password) => {
+      console.log(email, password)
+      return firebase.auth().createUserWithEmailAndPassword(email, password )
       .then((data)=>{
         console.log(data.uid)
         return UID = data.uid
       })
     },
-    setter : (registerData) => {
-      return firebase.auth().signInWithEmailAndPassword(registerData.email, registerData.password)
+
+    setter : (email, password) => {
+      return firebase.auth().signInWithEmailAndPassword(email, password)
       then ((data)=> {
         console.log(data)
       })

@@ -2,7 +2,9 @@
 
 app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, userFactory, checkForAuth){
 	var tester = []
+	var keyLog = []
 	var postlog = []
+	var userData
 	console.log("MyPostsCtrl is loaded")
 // firebase.auth().onAuthStateChanged
 
@@ -19,9 +21,10 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
 		// tester= []
 		// console.log("TESTING ",tester)
 		$scope.users = val.data
+		console.log("userData ",userData)
+
 
 	})
-
 
 
   //function that adds thumbs up votes
@@ -37,20 +40,26 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
 			// buttonHits = value.myPosts;
 
 
+
 			tester.push(value.email);
+			keyLog.push(key);
 			console.log(tester)
 
-			for (var i =0; i < tester.length; i++){
-				if(tester[i] === currentPerson) {
-					console.log("tester ",tester[i] + " currentPerson ", currentPerson)
-					console.log("wonder if ", value.name)
-				} else {
-					console.log("nope")
-				}
-			}
+
 		})
 
-
+		for (var i =0; i < tester.length; i++){
+			if(tester[i] === currentPerson) {
+				hereNow = keyLog[i];
+				console.log("tester ",tester[i] + " currentPerson ", currentPerson)
+				//need to use [] instead of . for variables in the daisy chain of code
+				// keys and values.
+				console.log("wonder if ", userData[hereNow])
+				console.log("name test ", userData)
+			} else {
+				console.log("nope")
+			}
+		}
 
 
 
