@@ -1,10 +1,11 @@
 // console.log("MyPosts")
 
-app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, userFactory, checkForAuth){
+app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, userFactory, authFactory){
 	var tester = []
 	var keyLog = []
 	var postlog = []
 	var userData
+
 	console.log("MyPostsCtrl is loaded")
 // firebase.auth().onAuthStateChanged
 
@@ -89,6 +90,14 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
     //sends updated count to firebase
     $http.patch(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/newPost/${key}/.json`, JSON.stringify(counterObj))
   }
+  // $http.get(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/users.json`)
+  // .then((data)=>{
+  //   $scope.usersObj = data.data
+  //   $scope.key = key
+  //   $scope.currentUser = data.data.$scope.key.email
+  //   console.log($scope.currentUser)
+  // })
+
 })
 
 
