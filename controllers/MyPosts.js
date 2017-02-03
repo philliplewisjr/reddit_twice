@@ -14,7 +14,7 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
 		console.log("user val.data", val.data)
 		userData = val.data
 		console.log("hello ",userData[0])
-		tester= [userData]
+		tester= []
 		console.log("TESTING ",tester)
 		$scope.users = val.data
 
@@ -27,6 +27,16 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
 			// result[key] = key;
 			console.log("this is a key ", key)
 			console.log("this is a value ", value)
+			tester.push(key);
+
+
+// Find firebase.auth().currentUser
+// using this you can skip the array of users and go straight to trying to
+// checking an array of post id's
+
+// and look up the band_libraies github repo thing of Caitlin's
+
+
 
 
 			// console.log("this is a key" + key)
@@ -46,6 +56,9 @@ app.controller('MyPostsCtrl', function($scope, $http, $filter, postFactory, user
 			//   }, arraything);
 			// }
 		})
+		console.log("This is the tester ",tester)
+var found = $filter('filter')(tester, "Lewis")[0]
+console.log("this is a thing ", found)
 
 
 
