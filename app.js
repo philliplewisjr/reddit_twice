@@ -9,6 +9,14 @@ app.config(function($routeProvider, $locationProvider) {
 
 
 // initialize firebase
+var config = {
+    apiKey: "AIzaSyDtCeFfh2tqd3mRAhxPQFtgX94VCiSMBD4",
+    authDomain: "reddit-remake.firebaseapp.com",
+    databaseURL: "https://reddit-remake.firebaseio.com",
+    storageBucket: "reddit-remake.appspot.com",
+    messagingSenderId: "26243507523"
+  };
+  firebase.initializeApp(config);
 
 
 

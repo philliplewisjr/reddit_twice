@@ -1,13 +1,35 @@
 console.log("MainCtrl")
 
+
 app.controller('MainCtrl', function($scope, $http, postFactory){
 	postFactory.getPost()
 	.then((val) => {
 		console.log("val.data", val.data)
 		$scope.posts = val.data
 	})
-// up/down vote
-	$scope.changeVote = function(vote, flag){
-    $scope.vote = vote==flag?'None':flag;
-	}
+
+
+//function that adds thumbs up votes
+  $scope.thumbsUp = (key, value)=> {
+    value.counter += 1
+    //incremented object sent to firebase
+    let counterObj = {
+    counter: value.counter
+    }
+    //sends updated count to firebase
+    $http.patch(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/newPost/${key}/.json`, JSON.stringify(counterObj))
+  }
+
+  //function that subtracts thumbs up votes
+  $scope.thumbsDown = (key, value)=> {
+    value.counter -= 1
+    //decremented object sent to firebase
+     let counterObj = {
+    counter: value.counter
+    }
+    //sends updated count to firebase
+    $http.patch(`https://reddit-remake.firebaseio.com/-KbqByZHKlsW1W0RI4DR/newPost/${key}/.json`, JSON.stringify(counterObj))
+  }
+
+
 })
